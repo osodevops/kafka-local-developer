@@ -1,0 +1,18 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnect
+metadata:
+  name: connect-cluster
+  annotations:
+    strimzi.io/use-connector-resources: "true"
+spec:
+  version: 3.8.0
+  replicas: 1
+  bootstrapServers: single-broker-kafka-bootstrap:9093
+  config:
+    group.id: connect-cluster
+    config.storage.replication.factor: 1
+    offset.storage.replication.factor: 1
+    status.storage.replication.factor: 1
+    config.storage.topic: connect-cluster-configs
+    offset.storage.topic: connect-cluster-offsets
+    status.storage.topic: connect-cluster-status
