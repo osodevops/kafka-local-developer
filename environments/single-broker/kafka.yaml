@@ -27,7 +27,7 @@ spec:
     replicas: 1
     version: 3.8.0
     listeners:
-      - name: plain2
+      - name: plain
         port: 9092
         type: internal
         tls: false
@@ -44,9 +44,3 @@ spec:
       transaction.state.log.replication.factor: 1
       transaction.state.log.min.isr: 1
       min.insync.replicas: 1
-    metricsConfig:
-      type: jmxPrometheusExporter
-      valueFrom:
-        configMapKeyRef:
-          key: kafka-metrics-config.yml
-          name: kafka-metrics
