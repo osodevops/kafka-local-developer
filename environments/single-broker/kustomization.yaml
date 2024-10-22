@@ -3,4 +3,6 @@ kind: Kustomization
 namespace: single-broker
 resources:
   - namespace.yaml
-  - kafka.yml
+  - kafka.yaml
+  - role.yaml
+  - rolebinding.yaml
